@@ -39,12 +39,6 @@ export class HeroService {
     )
   }
 
-  // getHero(id: number): Observable<Hero> {
-  //   const hero = HEROES.find(hero => hero.id === id)!;
-  //   this.messageService.add(``);
-  //   return of(hero)
-  // }
-
   updateHero(hero: Hero): Observable<any> {
     return this.http.put(this.heroesUrl, hero, this.httpOptions).pipe(
       tap(_ => this.log(`updated hero id=${hero.id}`)),
